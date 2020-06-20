@@ -2,7 +2,28 @@ let pageNumber = 0;
 
 // content for pages
 
-const pages = ['brooklyn design', 'kanye west', 'october', 'download my pdf'];
+const pages = [
+  {
+    copy: 'A Brooklyn-based graphic designer',
+    background: '#edc7a9',
+    circle: '#3e78ed',
+  },
+  {
+    copy: 'Kanye Wests biggest fan',
+    background: '#a1fffe',
+    circle: '#e34a47',
+  },
+  {
+    copy: 'Looking for a job',
+    background: '#d3c7f3',
+    circle: '#f7fe00',
+  },
+  {
+    copy: `letting you <a href="pdf.pdf">download her PDF</a>`,
+    background: '#faffb8',
+    circle: '#b472e6',
+  },
+];
 
 //pick the relevent tags
 const nextTag = document.querySelector('footer img.next');
@@ -31,7 +52,7 @@ const previous = function () {
 };
 
 const updateSection = function () {
-  outputTag.innerHTML = pages[pageNumber];
+  outputTag.innerHTML = pages[pageNumber].copy;
 };
 
 nextTag.addEventListener('click', function () {
